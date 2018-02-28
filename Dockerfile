@@ -19,7 +19,7 @@ RUN apt install -y software-properties-common
 RUN apt-add-repository -y ppa:bitcoin/bitcoin 
 
 RUN apt-get update && \
-    apt install -y \
+    apt install -y --no-install-recommends \
         make \
         software-properties-common \
         build-essential  \
