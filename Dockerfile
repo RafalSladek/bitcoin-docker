@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER Rafal Sladek <rafal.sladek@gmail>
+MAINTAINER Rafal Sladek <rafal.sladek@gmail.com>
 
 WORKDIR /root
 
@@ -18,9 +18,8 @@ RUN apt install -y software-properties-common
 
 RUN apt-add-repository -y ppa:bitcoin/bitcoin 
 
-RUN apt-get update >/dev/null 2>&1
-
-RUN apt install -y \
+RUN apt-get update && \
+    apt install -y \
         make \
         software-properties-common \
         build-essential  \
@@ -46,7 +45,7 @@ RUN apt install -y \
         libgmp3-dev \
         ufw  \
         fail2ban  \
-        pwgen
-
-RUN apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+        pwgen && \
+    apt-get -y autoremove && \
+    apt-get -y autoclean && \
+    rm -rf /var/lib/apt/lists/*
