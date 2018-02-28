@@ -33,3 +33,6 @@ RUN apt install -y \
         bsdmainutils libdb4.8++-dev \
         libminiupnpc-dev libgmp3-dev \
         ufw fail2ban pwgen
+        
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
