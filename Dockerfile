@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER Rafal Sladek <rafal.sladek@gmail.com>
 
 WORKDIR /root
