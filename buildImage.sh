@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t bitcoin-docker-base:rsp .
+docker build -t rafalsladek/bitcoin-docker-base:rsp .
